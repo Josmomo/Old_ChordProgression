@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.jonassjoberg.chordprogression.SetupActivity">
+
+    <Button
+        android:id="@+id/setupActivityButtonStart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Start" />
+
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/setupActivityAdView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="@string/admob_banner_id_main_activity"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true">
+    </com.google.android.gms.ads.AdView>
+
+    <ScrollView
+        android:id="@+id/setupActivityScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_above="@+id/setupActivityButtonStart"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/setupActivityAdView">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Key"
+                    android:textColor="@color/black" />
+
+                <Spinner
+                    android:id="@+id/setupActivitySpinnerKeyNote"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1" />
+
+                <Spinner
+                    android:id="@+id/setupActivitySpinnerKeyChordType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/setupActivityButtonSimple"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:text="Simple" />
+
+                <Button
+                    android:id="@+id/setupActivityButtonAll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:text="All" />
+            </LinearLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/setupActivityLinearLayoutLeft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/setupActivityLinearLayoutRight"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <Switch
+                        android:id="@+id/setupActivitySwitchMajor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:checked="true"
+                        android:text="Major" />
+
+                    <Switch
+                        android:id="@+id/setupActivitySwitchMinor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:checked="true"
+                        android:text="Minor" />
+
+                    <Switch
+                        android:id="@+id/setupActivitySwitchMinor6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:checked="true"
+                        android:text="Minor6" />
+
+                    <Switch
+                        android:id="@+id/setupActivitySwitchMinor7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:checked="true"
+                        android:text="Minor7" />
+
+                    <Switch
+                        android:id="@+id/setupActivitySwitchMinor7b5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:checked="true"
+                        android:text="Minor7b5" />
+
+                    <Switch
+                        android:id="@+id/setupActivitySwitchMinor9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:checked="true"
+                        android:text="Minor9" />
+
+                    <Switch
+                        android:id="@+id/setupActivitySwitchMaj7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:checked="true"
+                        android:text="Maj7" />
+
+                    <Switch
+                        android:id="@+id/setupActivitySwitchMaj9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:checked="true"
+                        android:text="Maj9" />
+
+                    <Switch
+                        android:id="@+id/setupActivitySwitchDim7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:checked="true"
+                        android:text="Dim7" />
+
+                    <Switch
+                        android:id="@+id/setupActivitySwitchDimSlashb3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:checked="true"
+                        android:text="Dim/b3" />
+
+                    <Switch
+                        android:id="@+id/setupActivitySwitchSus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:checked="true"
+                        android:text="Sus" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/setupActivityLinearLayoutRight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/setupActivityLinearLayoutLeft"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <Switch
+                        android:id="@+id/setupActivitySwitchSlash1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:checked="true"
+                        android:text="/1" />
+
+                    <Switch
+                        android:id="@+id/setupActivitySwitch2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:checked="true"
+                        android:text="2" />
+
+                    <Switch
+                        android:id="@+id/setupActivitySwitchSlash2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:checked="true"
+                        android:text="/2" />
+
+                    <Switch
+                        android:id="@+id/setupActivitySwitchSlash3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:checked="true"
+                        android:text="/3" />
+
+                    <Switch
+                        android:id="@+id/setupActivitySwitchSlash5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:checked="true"
+                        android:text="/5" />
+
+                    <Switch
+                        android:id="@+id/setupActivitySwitch6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:checked="true"
+                        android:text="6" />
+
+                    <Switch
+                        android:id="@+id/setupActivitySwitch7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:checked="true"
+                        android:text="7" />
+
+                    <Switch
+                        android:id="@+id/setupActivitySwitch9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:checked="true"
+                        android:text="9" />
+
+                    <Switch
+                        android:id="@+id/setupActivitySwitchb9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:checked="true"
+                        android:text="b9" />
+
+                    <Switch
+                        android:id="@+id/setupActivitySwitch11"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:checked="true"
+                        android:text="11" />
+
+                    <Switch
+                        android:id="@+id/setupActivitySwitch13"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:checked="true"
+                        android:text="13" />
+
+                </LinearLayout>
+
+            </android.support.constraint.ConstraintLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
+

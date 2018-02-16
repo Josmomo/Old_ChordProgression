@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Endless Chord Progression</string>
+
+    <string name="title_activity_endless_mode">EndlessModeActivity</string>
+    <string name="admob_banner_id_main_activity">ca-app-pub-2905699833595071/1034102426</string>
+
+    <string-array name="key_notes_array">
+        <item>C</item>
+        <item>C#/Db</item>
+        <item>D</item>
+        <item>D#/Eb</item>
+        <item>E</item>
+        <item>F</item>
+        <item>F#/Gb</item>
+        <item>G</item>
+        <item>G#/Ab</item>
+        <item>A</item>
+        <item>A#/Bb</item>
+        <item>B</item>
+    </string-array>
+
+    <string-array name="key_chord_type_array">
+        <item>Major</item>
+        <item>Minor</item>
+    </string-array>
+
+</resources>
