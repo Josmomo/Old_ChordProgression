@@ -33,7 +33,7 @@ public class EndlessModeActivity extends AppCompatActivity {
 
     private int mBpm = Constants.BPM_DEFAULT;
     private int mPeriodInMillis = Constants.MINUTE_IN_MILLIS / mBpm;
-    private int mTimeType = Constants.TIME_4_4;
+    private int mTimeType = Constants.PROGRESSION_TIME_SIGNATURE;
     private int mTimeCount = 0;
     private Handler handler = new Handler();
 
@@ -131,7 +131,7 @@ public class EndlessModeActivity extends AppCompatActivity {
             if (mTimeCount == mTimeType - 1) {
 
                 Transition transition = new AutoTransition();
-                transition.setDuration(Constants.MINUTE_IN_MILLIS /(mBpm * Constants.TIME_4_4));
+                transition.setDuration(Constants.MINUTE_IN_MILLIS /(mBpm * 2));
                 transition.setInterpolator(new AccelerateDecelerateInterpolator());
 
                 TransitionManager.beginDelayedTransition(mConstraintLayout, transition);

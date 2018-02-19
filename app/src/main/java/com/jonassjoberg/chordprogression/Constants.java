@@ -22,7 +22,6 @@ public class Constants {
     public static final int BPM_MIN = 40;
     public static final int BPM_DEFAULT = 120;
     public static final int MINUTE_IN_MILLIS = 60000;
-    public static final int TIME_4_4 = 4;
 
     // Font and output variables
     public static final String FONT_PATH = "fonts/JazzChords.ttf";
@@ -178,6 +177,7 @@ public class Constants {
     public static final int NUMBER_OF_CHORD_TYPES = 22;
     public static final int NUMBER_OF_NOTES = 12;
     public static final int N = NUMBER_OF_NOTES * NUMBER_OF_CHORD_TYPES + 1;
+    public static int PROGRESSION_TIME_SIGNATURE = 4;
     public static int PROGRESSION_KEY_NOTE = NOTE_C;
     public static int PROGRESSION_KEY_CHORD_TYPE = CHORD_TYPE_MINOR;
     public static final int PULL_MULTIPLIER = 5;

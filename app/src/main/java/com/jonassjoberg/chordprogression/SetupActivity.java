@@ -18,6 +18,7 @@ public class SetupActivity extends AppCompatActivity {
 
     private Spinner mSpinnerKeyNote;
     private Spinner mSpinnerKeyChordType;
+    private Spinner mSpinnerTimeSignature;
     private Button mButtonSimple;
     private Button mButtonAll;
     private Button mButtonStart;
@@ -54,6 +55,7 @@ public class SetupActivity extends AppCompatActivity {
         mAdView = findViewById(R.id.setupActivityAdView);
         mSpinnerKeyNote = findViewById(R.id.setupActivitySpinnerKeyNote);
         mSpinnerKeyChordType = findViewById(R.id.setupActivitySpinnerKeyChordType);
+        mSpinnerTimeSignature = findViewById(R.id.setupActivitySpinnerTimeSignature);
         mButtonSimple = findViewById(R.id.setupActivityButtonSimple);
         mButtonAll = findViewById(R.id.setupActivityButtonAll);
         mButtonStart = findViewById(R.id.setupActivityButtonStart);
@@ -109,6 +111,21 @@ public class SetupActivity extends AppCompatActivity {
 
             }
         });
+        ArrayAdapter<CharSequence> adapterTimeSignature = ArrayAdapter.createFromResource(this, R.array.time_signature_array, android.R.layout.simple_spinner_item);
+        adapterTimeSignature.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        mSpinnerTimeSignature.setAdapter(adapterTimeSignature);
+        mSpinnerTimeSignature.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                Constants.PROGRESSION_TIME_SIGNATURE = i + 2;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+        mSpinnerTimeSignature.setSelection(2);
         mButtonSimple.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

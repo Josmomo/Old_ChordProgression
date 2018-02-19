@@ -51,19 +51,6 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Key"
-                    android:textColor="@color/black" />
-
                 <Spinner
                     android:id="@+id/setupActivitySpinnerKeyNote"
                     android:layout_width="wrap_content"
@@ -76,6 +63,16 @@
 
                 <Spinner
                     android:id="@+id/setupActivitySpinnerKeyChordType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1" />
+
+                <Spinner
+                    android:id="@+id/setupActivitySpinnerTimeSignature"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
@@ -152,7 +149,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:checked="true"
+                        android:checked="false"
                         android:text="Minor6" />
 
                     <Switch
@@ -160,7 +157,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:checked="true"
+                        android:checked="false"
                         android:text="Minor7" />
 
                     <Switch
@@ -168,7 +165,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:checked="true"
+                        android:checked="false"
                         android:text="Minor7b5" />
 
                     <Switch
@@ -176,7 +173,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:checked="true"
+                        android:checked="false"
                         android:text="Minor9" />
 
                     <Switch
@@ -184,7 +181,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:checked="true"
+                        android:checked="false"
                         android:text="Maj7" />
 
                     <Switch
@@ -192,7 +189,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:checked="true"
+                        android:checked="false"
                         android:text="Maj9" />
 
                     <Switch
@@ -200,7 +197,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:checked="true"
+                        android:checked="false"
                         android:text="Dim7" />
 
                     <Switch
@@ -208,7 +205,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:checked="true"
+                        android:checked="false"
                         android:text="Dim/b3" />
 
                     <Switch
@@ -216,7 +213,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:checked="true"
+                        android:checked="false"
                         android:text="Sus" />
 
                 </LinearLayout>
@@ -238,7 +235,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:checked="true"
+                        android:checked="false"
                         android:text="/1" />
 
                     <Switch
@@ -246,7 +243,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:checked="true"
+                        android:checked="false"
                         android:text="2" />
 
                     <Switch
@@ -254,7 +251,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:checked="true"
+                        android:checked="false"
                         android:text="/2" />
 
                     <Switch
@@ -262,7 +259,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:checked="true"
+                        android:checked="false"
                         android:text="/3" />
 
                     <Switch
@@ -270,7 +267,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:checked="true"
+                        android:checked="false"
                         android:text="/5" />
 
                     <Switch
@@ -278,7 +275,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:checked="true"
+                        android:checked="false"
                         android:text="6" />
 
                     <Switch
@@ -294,7 +291,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:checked="true"
+                        android:checked="false"
                         android:text="9" />
 
                     <Switch
@@ -302,7 +299,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:checked="true"
+                        android:checked="false"
                         android:text="b9" />
 
                     <Switch
@@ -310,7 +307,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:checked="true"
+                        android:checked="false"
                         android:text="11" />
 
                     <Switch
@@ -318,7 +315,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:checked="true"
+                        android:checked="false"
                         android:text="13" />
 
                 </LinearLayout>
