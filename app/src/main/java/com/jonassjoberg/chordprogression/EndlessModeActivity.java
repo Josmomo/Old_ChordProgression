@@ -1,5 +1,7 @@
 package com.jonassjoberg.chordprogression;
 
+import android.graphics.Typeface;
+import android.media.MediaPlayer;
 import android.os.Handler;
 import android.support.constraint.ConstraintLayout;
 import android.support.constraint.ConstraintSet;
@@ -9,6 +11,7 @@ import android.transition.AutoTransition;
 import android.transition.Transition;
 import android.transition.TransitionManager;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.AccelerateDecelerateInterpolator;
@@ -27,7 +30,9 @@ public class EndlessModeActivity extends AppCompatActivity {
     private SeekBar mSeekBarBpm;
     private TextView mTextViewBpm;
     private ConstraintLayout mConstraintLayout;
-    private ConstraintSet mApplyConstraintSet = new ConstraintSet();
+    private ConstraintSet mApplyConstraintSet;
+    private TextView mTextViewMetronome;
+    private MediaPlayer mMediaPlayer;
     private FactoryTextViewChord factoryTextViewChord;
     private LinkedList<TextView> mLinkedListTextViewChords = new LinkedList<TextView>();
 
@@ -50,6 +55,7 @@ public class EndlessModeActivity extends AppCompatActivity {
         mSeekBarBpm = findViewById(R.id.endlessModeActivitySeekBarBpm);
         mTextViewBpm = findViewById(R.id.endlessModeActivityTextViewBpm);
         mConstraintLayout = (ConstraintLayout) findViewById(R.id.endlessModeActivityFullscreenContent);
+        mTextViewMetronome = findViewById(R.id.endlessModeActivityTextViewMetronome);
 
         mSeekBarBpm.setMax(Constants.BPM_MAX - Constants.BPM_MIN);
         mSeekBarBpm.setProgress(mBpm - Constants.BPM_MIN);
@@ -79,7 +85,10 @@ public class EndlessModeActivity extends AppCompatActivity {
 
             }
         });
+        mApplyConstraintSet = new ConstraintSet();
         mApplyConstraintSet.clone(mConstraintLayout);
+        setupMetronomeView();
+        mMediaPlayer = MediaPlayer.create(this, R.raw.tick);
         factoryTextViewChord = new FactoryTextViewChord(getApplicationContext());
 
         // Manually setup the starting chord
@@ -126,6 +135,11 @@ public class EndlessModeActivity extends AppCompatActivity {
     private Runnable runnable = new Runnable() {
         @Override
         public void run() {
+
+            // Play metronome tick
+            if (Constants.ENABLE_METRONOME) {
+                mMediaPlayer.start();
+            }
 
             // Switch to next chord if a bar has passed
             if (mTimeCount == mTimeType - 1) {
@@ -219,5 +233,30 @@ public class EndlessModeActivity extends AppCompatActivity {
 
         // Apply everything
         mApplyConstraintSet.applyTo(mConstraintLayout);
+    }
+
+    private void setupMetronomeView() {
+        mTextViewMetronome.setTypeface(Typeface.createFromAsset(getApplicationContext().getAssets(), Constants.FONT_PATH));
+        mTextViewMetronome.setTextColor(getApplicationContext().getResources().getColor(R.color.white));
+        mTextViewMetronome.setTextSize(TypedValue.COMPLEX_UNIT_SP, 50.f);
+        mTextViewMetronome.setText(Constants.FONT_SINGLE_NOTE_FOURTH);
+        mTextViewMetronome.refreshDrawableState();
+
+        //mTextViewMetronomeEnable.setTypeface(Typeface.createFromAsset(getApplicationContext().getAssets(), Constants.FONT_PATH));
+        //mTextViewMetronomeEnable.setTextColor(getApplicationContext().getResources().getColor(R.color.white));
+        //mTextViewMetronomeEnable.setTextSize(TypedValue.COMPLEX_UNIT_SP, 50.f);
+        //mTextViewMetronomeEnable.setText(Constants.FONT_SINGLE_NOTE_HALF);
+
+        mTextViewMetronome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Constants.ENABLE_METRONOME = !Constants.ENABLE_METRONOME;
+                if (Constants.ENABLE_METRONOME) {
+                    mTextViewMetronome.setText(Constants.FONT_SINGLE_NOTE_FOURTH);
+                } else {
+                    mTextViewMetronome.setText(Constants.FONT_SINGLE_NOTE_HALF);
+                }
+            }
+        });
     }
 }
