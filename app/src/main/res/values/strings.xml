@@ -4,6 +4,13 @@
     <string name="title_activity_endless_mode">EndlessModeActivity</string>
     <string name="admob_banner_id_main_activity">ca-app-pub-2905699833595071/1034102426</string>
 
+    <string-array name="time_signature_array">
+        <item>2/4</item>
+        <item>3/4</item>
+        <item>4/4</item>
+        <item>5/4</item>
+    </string-array>
+
     <string-array name="key_notes_array">
         <item>C</item>
         <item>C#/Db</item>

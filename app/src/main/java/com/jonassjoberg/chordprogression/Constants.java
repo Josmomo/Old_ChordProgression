@@ -1,6 +1,5 @@
 package com.jonassjoberg.chordprogression;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,24 +21,25 @@ public class Constants {
     public static final int BPM_MIN = 40;
     public static final int BPM_DEFAULT = 120;
     public static final int MINUTE_IN_MILLIS = 60000;
-    public static final int TIME_4_4 = 4;
 
     // Font and output variables
     public static final String FONT_PATH = "fonts/JazzChords.ttf";
-    public static final String NORMAL_CHORDS_FLAT = "♭";
-    public static final String NORMAL_CHORDS_SHARP = "♯";
+    public static final String FONT_CHORDS_FLAT = "♭";
+    public static final String FONT_CHORDS_SHARP = "♯";
+    public static final String FONT_SINGLE_NOTE_FOURTH = "\uECA5";
+    public static final String FONT_SINGLE_NOTE_HALF = "\uECA3";
     public static final Map<Integer, String> BASE_NOTES_MAP = new HashMap<Integer, String>() {{
         put(0, "C");
-        put(1, "C" + NORMAL_CHORDS_SHARP);
+        put(1, "C" + FONT_CHORDS_SHARP);
         put(2, "D");
-        put(3, "E" + NORMAL_CHORDS_FLAT );
+        put(3, "E" + FONT_CHORDS_FLAT);
         put(4, "E");
         put(5, "F");
-        put(6, "F" + NORMAL_CHORDS_SHARP);
+        put(6, "F" + FONT_CHORDS_SHARP);
         put(7, "G");
-        put(8, "A" + NORMAL_CHORDS_FLAT );
+        put(8, "A" + FONT_CHORDS_FLAT);
         put(9, "A");
-        put(10, "B" + NORMAL_CHORDS_FLAT );
+        put(10, "B" + FONT_CHORDS_FLAT);
         put(11, "B");
     }};
     public static final Map<Integer, Integer> FIFTH_NOTES_MAP = new HashMap<Integer, Integer>() {{
@@ -152,6 +152,8 @@ public class Constants {
     public static final int CHORD_TYPE_SLASH_5 = 20;
     public static final int CHORD_TYPE_DIM_SLASH_b3 = 21;
 
+    public static boolean ENABLE_METRONOME = true;
+
     public static boolean ENABLE_CHORD_TYPE_MAJOR = true;
     public static boolean ENABLE_CHORD_TYPE_MINOR = true;
     public static boolean ENABLE_CHORD_TYPE_SUS = true;
@@ -178,6 +180,7 @@ public class Constants {
     public static final int NUMBER_OF_CHORD_TYPES = 22;
     public static final int NUMBER_OF_NOTES = 12;
     public static final int N = NUMBER_OF_NOTES * NUMBER_OF_CHORD_TYPES + 1;
+    public static int PROGRESSION_TIME_SIGNATURE = 4;
     public static int PROGRESSION_KEY_NOTE = NOTE_C;
     public static int PROGRESSION_KEY_CHORD_TYPE = CHORD_TYPE_MINOR;
     public static final int PULL_MULTIPLIER = 5;
