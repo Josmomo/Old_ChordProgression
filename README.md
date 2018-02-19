@@ -1,8 +1,8 @@
 # ChordProgression
 ## Features
 * Endless Chord Progression Stream
-* Chose Key
-* Chose Time Signature
+* Choose Key
+* Choose Time Signature
 * Metronome Tick Sound
 
 ## TODO
