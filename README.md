@@ -1,12 +1,16 @@
 # ChordProgression
+## Features
+* Endless Chord Progression Stream
+* Choose Key
+* Choose Time Signature
+* Metronome Tick Sound
 
 ## TODO
 ### Core Functions
-* Time Signatures
-* Metronome *Click*
-* Chord sound
+* Lower API Requirement
+* Chord Sound
 * Modes
 ### Additional Features
-* About
+* About Page
 * Metronome
 * Static Chord Progressions
