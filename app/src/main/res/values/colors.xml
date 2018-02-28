@@ -6,7 +6,7 @@
     <color name="offBeatColor">#FFFFFF</color>
     <color name="onBeatColor">@color/dark_blue</color>
     <color name="blue">#33b5e5</color>
-    <color name="dark_blue">#0050BB</color>
+    <color name="dark_blue">#1171a1</color>
     <color name="white">#FFFFFF</color>
     <color name="gray">#aaaaaa</color>
     <color name="black">#000000</color>

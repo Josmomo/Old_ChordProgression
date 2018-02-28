@@ -31,4 +31,31 @@
         <item>Minor</item>
     </string-array>
 
+    <string name="chord_type_major">M</string>
+    <string name="chord_type_minor">m</string>
+    <string name="chord_type_sus">\uE185</string>
+    <string name="chord_type_7">\uE197</string>
+    <string name="chord_type_minor_7">m\uE197</string>
+    <string name="chord_type_maj_7">\uE18A\uE197</string>
+    <string name="chord_type_2">\uE192</string>
+    <string name="chord_type_6">\uE196</string>
+    <string name="chord_type_minor_6">m\uE196</string>
+    <string name="chord_type_dim_7">\uE184\uE197</string>
+    <string name="chord_type_9">\uE199</string>
+    <string name="chord_type_minor_9">m\uE199</string>
+    <string name="chord_type_maj_9">\uE18A\uE199</string>
+    <string name="chord_type_11">\uE182</string>
+    <string name="chord_type_13">\uE183</string>
+    <string name="chord_type_b9">\uE188\uE199</string>
+    <string name="chord_type_minor_7_b5">m\uE197\uE188\uE195</string>
+    <string name="chord_type_slash_1">/I</string>
+    <string name="chord_type_slash_2">/II</string>
+    <string name="chord_type_slash_3">/III</string>
+    <string name="chord_type_slash_5">/V</string>
+    <string name="chord_type_dim_slash_b3">\uE184/♭III</string>
+    <string name="endless_mode">Endless</string>
+    <string name="setup_option_simple">Simple</string>
+    <string name="setup_option_all">All</string>
+    <string name="setup_start">Start</string>
+
 </resources>

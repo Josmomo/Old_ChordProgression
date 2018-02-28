@@ -1,6 +1,7 @@
 package com.jonassjoberg.chordprogression;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,8 @@ import android.widget.Switch;
 import com.google.android.gms.ads.AdView;
 
 public class SetupActivity extends AppCompatActivity {
+
+    private Typeface mTypeface;
 
     private AdView mAdView;
 
@@ -51,6 +54,8 @@ public class SetupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setup);
 
+        mTypeface = Typeface.createFromAsset(getApplicationContext().getAssets(), Constants.FONT_PATH);
+
         final AdManager mAdManager = new AdManager(this);
         mAdView = findViewById(R.id.setupActivityAdView);
         mSpinnerKeyNote = findViewById(R.id.setupActivitySpinnerKeyNote);
@@ -82,9 +87,32 @@ public class SetupActivity extends AppCompatActivity {
         mSwitchSlash5 = findViewById(R.id.setupActivitySwitchSlash5);
         mSwitchDimSlashb3 = findViewById(R.id.setupActivitySwitchDimSlashb3);
 
+        mSwitchMajor.setTypeface(mTypeface);
+        mSwitchMinor.setTypeface(mTypeface);
+        mSwitchSus.setTypeface(mTypeface);
+        mSwitch7.setTypeface(mTypeface);
+        mSwitchMinor7.setTypeface(mTypeface);
+        mSwitchMaj7.setTypeface(mTypeface);
+        mSwitch2.setTypeface(mTypeface);
+        mSwitch6.setTypeface(mTypeface);
+        mSwitchMinor6.setTypeface(mTypeface);
+        mSwitchDim7.setTypeface(mTypeface);
+        mSwitch9.setTypeface(mTypeface);
+        mSwitchMinor9.setTypeface(mTypeface);
+        mSwitchMaj9.setTypeface(mTypeface);
+        mSwitch11.setTypeface(mTypeface);
+        mSwitch13.setTypeface(mTypeface);
+        mSwitchb9.setTypeface(mTypeface);
+        mSwitchMinor7b5.setTypeface(mTypeface);
+        mSwitchSlash1.setTypeface(mTypeface);
+        mSwitchSlash2.setTypeface(mTypeface);
+        mSwitchSlash3.setTypeface(mTypeface);
+        mSwitchSlash5.setTypeface(mTypeface);
+        mSwitchDimSlashb3.setTypeface(mTypeface);
+
         mAdView.loadAd(mAdManager.getAdRequest());
-        ArrayAdapter<CharSequence> adapterNote = ArrayAdapter.createFromResource(this, R.array.key_notes_array, android.R.layout.simple_spinner_item);
-        adapterNote.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<CharSequence> adapterNote = ArrayAdapter.createFromResource(this, R.array.key_notes_array, R.layout.custom_spinner_item);
+        adapterNote.setDropDownViewResource(R.layout.custom_spinner_dropdown_item);
         mSpinnerKeyNote.setAdapter(adapterNote);
         mSpinnerKeyNote.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -97,8 +125,8 @@ public class SetupActivity extends AppCompatActivity {
 
             }
         });
-        ArrayAdapter<CharSequence> adapterChordType = ArrayAdapter.createFromResource(this, R.array.key_chord_type_array, android.R.layout.simple_spinner_item);
-        adapterChordType.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<CharSequence> adapterChordType = ArrayAdapter.createFromResource(this, R.array.key_chord_type_array, R.layout.custom_spinner_item);
+        adapterChordType.setDropDownViewResource(R.layout.custom_spinner_dropdown_item);
         mSpinnerKeyChordType.setAdapter(adapterChordType);
         mSpinnerKeyChordType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -111,8 +139,8 @@ public class SetupActivity extends AppCompatActivity {
 
             }
         });
-        ArrayAdapter<CharSequence> adapterTimeSignature = ArrayAdapter.createFromResource(this, R.array.time_signature_array, android.R.layout.simple_spinner_item);
-        adapterTimeSignature.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<CharSequence> adapterTimeSignature = ArrayAdapter.createFromResource(this, R.array.time_signature_array, R.layout.custom_spinner_item);
+        adapterTimeSignature.setDropDownViewResource(R.layout.custom_spinner_dropdown_item);
         mSpinnerTimeSignature.setAdapter(adapterTimeSignature);
         mSpinnerTimeSignature.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

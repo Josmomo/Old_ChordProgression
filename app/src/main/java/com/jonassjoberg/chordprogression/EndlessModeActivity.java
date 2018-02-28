@@ -207,7 +207,6 @@ public class EndlessModeActivity extends AppCompatActivity {
         mApplyConstraintSet.connect(R.id.endlessModeActivityTextViewCenter, ConstraintSet.BOTTOM, mConstraintLayout.getId(), ConstraintSet.BOTTOM);
         mApplyConstraintSet.connect(R.id.endlessModeActivityTextViewCenter, ConstraintSet.LEFT, mConstraintLayout.getId(), ConstraintSet.LEFT);
         mApplyConstraintSet.connect(R.id.endlessModeActivityTextViewCenter, ConstraintSet.RIGHT, R.id.endlessModeActivityTextViewRight, ConstraintSet.LEFT);
-        //mApplyConstraintSet.setVisibility(mLinkedListTextViewChords.get(1).getId(), ConstraintSet.VISIBLE);
 
         // Center <-- Right --> New
         mApplyConstraintSet.constrainWidth(R.id.endlessModeActivityTextViewRight, ConstraintSet.WRAP_CONTENT);
@@ -216,7 +215,6 @@ public class EndlessModeActivity extends AppCompatActivity {
         mApplyConstraintSet.connect(R.id.endlessModeActivityTextViewRight, ConstraintSet.BOTTOM, mConstraintLayout.getId(), ConstraintSet.BOTTOM);
         mApplyConstraintSet.connect(R.id.endlessModeActivityTextViewRight, ConstraintSet.LEFT, R.id.endlessModeActivityTextViewCenter, ConstraintSet.RIGHT);
         mApplyConstraintSet.connect(R.id.endlessModeActivityTextViewRight, ConstraintSet.RIGHT, mLinkedListTextViewChords.get(3).getId(), ConstraintSet.LEFT);
-        mApplyConstraintSet.setVisibility(R.id.endlessModeActivityTextViewRight, ConstraintSet.VISIBLE);
 
         // Right <-- New --> Wall
         mApplyConstraintSet.constrainWidth(R.id.endlessModeActivityTextViewNew, ConstraintSet.WRAP_CONTENT);
@@ -225,7 +223,6 @@ public class EndlessModeActivity extends AppCompatActivity {
         mApplyConstraintSet.connect(R.id.endlessModeActivityTextViewNew, ConstraintSet.BOTTOM, mConstraintLayout.getId(), ConstraintSet.BOTTOM);
         mApplyConstraintSet.connect(R.id.endlessModeActivityTextViewNew, ConstraintSet.LEFT, R.id.endlessModeActivityTextViewRight, ConstraintSet.RIGHT);
         mApplyConstraintSet.connect(R.id.endlessModeActivityTextViewNew, ConstraintSet.RIGHT, mConstraintLayout.getId(), ConstraintSet.RIGHT);
-        mApplyConstraintSet.setVisibility(R.id.endlessModeActivityTextViewNew, ConstraintSet.VISIBLE);
 
         // Center the new chain
         mApplyConstraintSet.centerHorizontally(R.id.endlessModeActivityTextViewRight, mConstraintLayout.getId());
@@ -241,11 +238,6 @@ public class EndlessModeActivity extends AppCompatActivity {
         mTextViewMetronome.setTextSize(TypedValue.COMPLEX_UNIT_SP, 50.f);
         mTextViewMetronome.setText(Constants.FONT_SINGLE_NOTE_FOURTH);
         mTextViewMetronome.refreshDrawableState();
-
-        //mTextViewMetronomeEnable.setTypeface(Typeface.createFromAsset(getApplicationContext().getAssets(), Constants.FONT_PATH));
-        //mTextViewMetronomeEnable.setTextColor(getApplicationContext().getResources().getColor(R.color.white));
-        //mTextViewMetronomeEnable.setTextSize(TypedValue.COMPLEX_UNIT_SP, 50.f);
-        //mTextViewMetronomeEnable.setText(Constants.FONT_SINGLE_NOTE_HALF);
 
         mTextViewMetronome.setOnClickListener(new View.OnClickListener() {
             @Override

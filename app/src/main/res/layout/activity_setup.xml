@@ -5,20 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/blue"
     tools:context="com.jonassjoberg.chordprogression.SetupActivity">
-
-    <Button
-        android:id="@+id/setupActivityButtonStart"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Start" />
 
     <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/setupActivityAdView"
@@ -27,17 +15,31 @@
         ads:adSize="SMART_BANNER"
         ads:adUnitId="@string/admob_banner_id_main_activity"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true">
     </com.google.android.gms.ads.AdView>
+
+    <Button
+        android:id="@+id/setupActivityButtonStart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/setup_start"
+        style="@style/CustomButtonTheme"/>
 
     <ScrollView
         android:id="@+id/setupActivityScrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_above="@+id/setupActivityButtonStart"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:layout_below="@+id/setupActivityAdView">
 
 
@@ -59,7 +61,7 @@
                     android:layout_marginEnd="8dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"/>
 
                 <Spinner
                     android:id="@+id/setupActivitySpinnerKeyChordType"
@@ -69,7 +71,7 @@
                     android:layout_marginEnd="8dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"/>
 
                 <Spinner
                     android:id="@+id/setupActivitySpinnerTimeSignature"
@@ -79,7 +81,7 @@
                     android:layout_marginEnd="8dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"/>
 
             </LinearLayout>
 
@@ -97,7 +99,8 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_weight="1"
-                    android:text="Simple" />
+                    android:text="@string/setup_option_simple"
+                    style="@style/CustomButtonTheme"/>
 
                 <Button
                     android:id="@+id/setupActivityButtonAll"
@@ -108,7 +111,8 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_weight="1"
-                    android:text="All" />
+                    android:text="@string/setup_option_all"
+                    style="@style/CustomButtonTheme"/>
             </LinearLayout>
 
             <android.support.constraint.ConstraintLayout
@@ -125,96 +129,108 @@
                     android:orientation="vertical"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/setupActivityLinearLayoutRight"
+                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <Switch
                         android:id="@+id/setupActivitySwitchMajor"
+                        style="@style/CustomSwitchTheme"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:checked="true"
-                        android:text="Major" />
+                        android:text="@string/chord_type_major" />
 
                     <Switch
                         android:id="@+id/setupActivitySwitchMinor"
+                        style="@style/CustomSwitchTheme"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:checked="true"
-                        android:text="Minor" />
+                        android:text="@string/chord_type_minor" />
 
                     <Switch
                         android:id="@+id/setupActivitySwitchMinor6"
+                        style="@style/CustomSwitchTheme"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:checked="false"
-                        android:text="Minor6" />
+                        android:text="@string/chord_type_minor_6" />
 
                     <Switch
                         android:id="@+id/setupActivitySwitchMinor7"
+                        style="@style/CustomSwitchTheme"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:checked="false"
-                        android:text="Minor7" />
+                        android:text="@string/chord_type_minor_7" />
 
                     <Switch
                         android:id="@+id/setupActivitySwitchMinor7b5"
+                        style="@style/CustomSwitchTheme"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:checked="false"
-                        android:text="Minor7b5" />
+                        android:text="@string/chord_type_minor_7_b5" />
 
                     <Switch
                         android:id="@+id/setupActivitySwitchMinor9"
+                        style="@style/CustomSwitchTheme"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:checked="false"
-                        android:text="Minor9" />
+                        android:text="@string/chord_type_minor_9" />
 
                     <Switch
                         android:id="@+id/setupActivitySwitchMaj7"
+                        style="@style/CustomSwitchTheme"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:checked="false"
-                        android:text="Maj7" />
+                        android:text="@string/chord_type_maj_7" />
 
                     <Switch
                         android:id="@+id/setupActivitySwitchMaj9"
+                        style="@style/CustomSwitchTheme"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:checked="false"
-                        android:text="Maj9" />
+                        android:text="@string/chord_type_maj_9" />
 
                     <Switch
                         android:id="@+id/setupActivitySwitchDim7"
+                        style="@style/CustomSwitchTheme"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:checked="false"
-                        android:text="Dim7" />
+                        android:text="@string/chord_type_dim_7" />
 
                     <Switch
                         android:id="@+id/setupActivitySwitchDimSlashb3"
+                        style="@style/CustomSwitchTheme"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:checked="false"
-                        android:text="Dim/b3" />
+                        android:text="@string/chord_type_dim_slash_b3" />
 
                     <Switch
                         android:id="@+id/setupActivitySwitchSus"
+                        style="@style/CustomSwitchTheme"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:checked="false"
-                        android:text="Sus" />
+                        android:text="@string/chord_type_sus" />
 
                 </LinearLayout>
 
@@ -236,15 +252,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:checked="false"
-                        android:text="/1" />
-
-                    <Switch
-                        android:id="@+id/setupActivitySwitch2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:checked="false"
-                        android:text="2" />
+                        android:text="@string/chord_type_slash_1"
+                        style="@style/CustomSwitchTheme"/>
 
                     <Switch
                         android:id="@+id/setupActivitySwitchSlash2"
@@ -252,7 +261,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:checked="false"
-                        android:text="/2" />
+                        android:text="@string/chord_type_slash_2"
+                        style="@style/CustomSwitchTheme"/>
 
                     <Switch
                         android:id="@+id/setupActivitySwitchSlash3"
@@ -260,7 +270,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:checked="false"
-                        android:text="/3" />
+                        android:text="@string/chord_type_slash_3"
+                        style="@style/CustomSwitchTheme"/>
 
                     <Switch
                         android:id="@+id/setupActivitySwitchSlash5"
@@ -268,7 +279,17 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:checked="false"
-                        android:text="/5" />
+                        android:text="@string/chord_type_slash_5"
+                        style="@style/CustomSwitchTheme"/>
+
+                    <Switch
+                        android:id="@+id/setupActivitySwitch2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:checked="false"
+                        android:text="@string/chord_type_2"
+                        style="@style/CustomSwitchTheme"/>
 
                     <Switch
                         android:id="@+id/setupActivitySwitch6"
@@ -276,7 +297,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:checked="false"
-                        android:text="6" />
+                        android:text="@string/chord_type_6"
+                        style="@style/CustomSwitchTheme"/>
 
                     <Switch
                         android:id="@+id/setupActivitySwitch7"
@@ -284,7 +306,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:checked="true"
-                        android:text="7" />
+                        android:text="@string/chord_type_7"
+                        style="@style/CustomSwitchTheme"/>
 
                     <Switch
                         android:id="@+id/setupActivitySwitch9"
@@ -292,7 +315,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:checked="false"
-                        android:text="9" />
+                        android:text="@string/chord_type_9"
+                        style="@style/CustomSwitchTheme"/>
 
                     <Switch
                         android:id="@+id/setupActivitySwitchb9"
@@ -300,7 +324,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:checked="false"
-                        android:text="b9" />
+                        android:text="@string/chord_type_b9"
+                        style="@style/CustomSwitchTheme"/>
 
                     <Switch
                         android:id="@+id/setupActivitySwitch11"
@@ -308,7 +333,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:checked="false"
-                        android:text="11" />
+                        android:text="@string/chord_type_11"
+                        style="@style/CustomSwitchTheme"/>
 
                     <Switch
                         android:id="@+id/setupActivitySwitch13"
@@ -316,7 +342,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:checked="false"
-                        android:text="13" />
+                        android:text="@string/chord_type_13"
+                        style="@style/CustomSwitchTheme"/>
 
                 </LinearLayout>
 
