@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:background="@color/dark_blue"
+    android:id="@+id/custom_spinner_dropdown_item"
+    android:gravity="left|center_vertical"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:textColor="@color/white"
+    android:textSize="15sp"
+    android:fontFamily="@font/jazz_chords">
+
+</TextView>
